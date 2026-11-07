@@ -27,3 +27,12 @@ def exit_program():
      print(f"Cantidad de registros exitosos realizados: {conteo_registros}")
      print("Saliendo del programa. Bye!")
      exit()
+
+print("Bienvenido al programa de registro de gastos.")
+def mostrar_opciones(): #definir el menu de opciones para el usuario
+    print("++++++++++++++")
+    print("1. Registrar un gasto")
+    print("2. Ver listado de gastos")
+    print("3. Ver resumen de gastos")
+    print("4. Salir")
+
