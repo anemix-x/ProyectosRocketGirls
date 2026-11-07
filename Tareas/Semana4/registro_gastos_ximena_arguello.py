@@ -36,3 +36,25 @@ def mostrar_opciones(): #definir el menu de opciones para el usuario
     print("3. Ver resumen de gastos")
     print("4. Salir")
 
+while True:
+    mostrar_opciones()
+    opcion = input("Seleccione una opcion: ") #mostrar el menu de opciones y solicitar que elija una
+    #opciones ennumeradas 
+    if opcion == "1":
+        descripcion = input("Ingrese la descripción del gasto: ")
+        try:
+            monto = float(input("Ingrese el monto del gasto: ¢"))
+            gasto = registrar_gasto(descripcion, monto)
+            gastos.append(gasto)
+            conteo_registros += 1
+            print("Gasto registrado.")
+        except ValueError as e:
+            print(f"Error: {e}")
+        if monto <= 0:
+                    raise ValueError("El monto del gasto debe ser mayor que cero.")
+    elif opcion == "2":
+        print(listado_gastos(gastos))
+    elif opcion == "3":
+        print(resumen_gastos(gastos))
+    elif opcion == "4":
+       exit_program()       
